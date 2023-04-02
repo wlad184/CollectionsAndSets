@@ -20,7 +20,7 @@ public class EmployeeListService {
             new Employee("Светлана", "Фёдорова")
     ));
 
-    public String addEmpl(String firstName, String lastName) throws EmployeeStorageIsFullException, EmployeeAlreadyAddedException {
+    public String addEmpl(String firstName, String lastName) throws  EmployeeAlreadyAddedException {
         Employee employee = new Employee(firstName, lastName);
             if ((empl.contains(employee))) {
                 throw new EmployeeAlreadyAddedException();
