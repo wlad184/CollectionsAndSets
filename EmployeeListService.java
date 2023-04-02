@@ -48,9 +48,7 @@ public class EmployeeListService {
         throw new EmployeeNotFoundException();
     }
 
-    public Employee printEmpl() {
-        return (Employee) empl;
-    }
+
 
 
 }
