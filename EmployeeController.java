@@ -29,8 +29,6 @@ public class EmployeeController {
         } catch (EmployeeAlreadyAddedException ex) {
             return "Такой сотрудник уже есть, введите другие данные!!!";
 
-        } catch (EmployeeStorageIsFullException ex) {
-            return "Массив заполнен, добавить сотрудника невозможно!!!";
         }
     }
 
