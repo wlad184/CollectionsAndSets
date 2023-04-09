@@ -4,17 +4,21 @@ import java.util.Objects;
 
 public class Employee {
 
+
     private String firstName;
     private String lastName;
 
     //private final int id;
     public static int country = 0;
 
+
+
     public Employee(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         //id = country++;
     }
+
 
     public String getFirstName() {
         return firstName;

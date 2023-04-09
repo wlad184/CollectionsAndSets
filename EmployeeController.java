@@ -1,14 +1,12 @@
 package CollectionsAndSets;
 
-import CollectionsAndSets.Excertions.EmployeeAlreadyAddedException;
 import CollectionsAndSets.Excertions.EmployeeNotFoundException;
-import CollectionsAndSets.Excertions.EmployeeStorageIsFullException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/employee")
@@ -22,14 +20,11 @@ public class EmployeeController {
 
 
     @GetMapping(path = "/add")
-    public String add(@RequestParam("firstName") String firstName, String lastName) {
-        try {
-            return " Сотрудник " + employeeListService.addEmpl(firstName, lastName) + " добавлен в спискок";
+    public Employee add(@RequestParam("firstName") String firstName, String lastName) {
 
-        } catch (EmployeeAlreadyAddedException ex) {
-            return "Такой сотрудник уже есть, введите другие данные!!!";
+            return employeeListService.addEmpl(firstName, lastName);
 
-        }
+
     }
 
     @GetMapping(path = "/remove")
@@ -53,8 +48,8 @@ public class EmployeeController {
         }
     }
 
-    @GetMapping(path = "/print")
-    public List<Employee> print() {
+    @GetMapping
+    public Map<String, Employee> print() {
 
         return employeeListService.empl;
     }

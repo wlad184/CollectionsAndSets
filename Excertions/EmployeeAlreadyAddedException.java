@@ -1,6 +1,6 @@
 package CollectionsAndSets.Excertions;
 
-public class EmployeeAlreadyAddedException extends Throwable {
+public class EmployeeAlreadyAddedException extends RuntimeException {
     public EmployeeAlreadyAddedException() {
     }
 
