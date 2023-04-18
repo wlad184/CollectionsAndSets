@@ -2,6 +2,7 @@ package CollectionsAndSets;
 
 import CollectionsAndSets.Excertions.EmployeeAlreadyAddedException;
 import CollectionsAndSets.Excertions.EmployeeNotFoundException;
+import CollectionsAndSets.classes.Employee;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

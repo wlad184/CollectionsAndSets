@@ -1,4 +1,4 @@
-package CollectionsAndSets;
+package CollectionsAndSets.classes;
 
 import java.util.Objects;
 
