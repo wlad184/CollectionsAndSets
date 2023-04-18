@@ -1,8 +1,8 @@
-package CollectionsAndSets;
+package CollectionsAndSets.classes;
 import CollectionsAndSets.Excertions.EmployeeAlreadyAddedException;
 import CollectionsAndSets.Excertions.EmployeeNotFoundException;
 import CollectionsAndSets.Excertions.EmployeeStorageIsFullException;
-import org.springframework.stereotype.Service;
+import CollectionsAndSets.classes.Employee;
 
 
 public class EmployeeArraysService {
