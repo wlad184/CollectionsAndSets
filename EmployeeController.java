@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -20,9 +21,9 @@ public class EmployeeController {
 
 
     @GetMapping(path = "/add")
-    public Employee add(@RequestParam("firstName") String firstName, String lastName) {
+    public Employee add(@RequestParam("firstName") String firstName, String lastName, String salary, String department) {
 
-            return employeeListService.addEmpl(firstName, lastName);
+            return employeeListService.addEmpl(firstName, lastName, salary, department);
 
 
     }
@@ -51,7 +52,27 @@ public class EmployeeController {
     @GetMapping
     public Map<String, Employee> print() {
 
-        return employeeListService.empl;
+        return employeeListService.emplMap;
+    }
+
+    @GetMapping(path = "/max-salary")
+    public Employee maxsalary(@RequestParam("department") String department) {
+        return employeeListService.maxSalary(department);
+    }
+
+    @GetMapping(path = "/min-salary")
+    public Employee minsalary(@RequestParam("department") String department) {
+        return employeeListService.minSalary(department);
+    }
+
+    @GetMapping(path = "/all")
+    public List<Employee> allDepartments() {
+        return employeeListService.all();
+    }
+
+    @GetMapping(path = "/departmentId")
+    public List<Employee> allDepartmentId(@RequestParam("department") String department) {
+        return employeeListService.allDepartment(department);
     }
 
 
